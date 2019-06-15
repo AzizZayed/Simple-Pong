@@ -78,11 +78,6 @@ public class Game extends Canvas implements Runnable {
 		// so you can keep your sanity, I won't explain the game loop... you're welcome
 
 		this.requestFocus();
-		
-		while (running) {
-			update();
-			draw();
-		}
 
 		// game timer
 		long lastTime = System.nanoTime();
