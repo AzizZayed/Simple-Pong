@@ -105,7 +105,7 @@ public class Game extends Canvas implements Runnable {
 				frames = 0;
 			}
 		}
-		
+
 		stop();
 	}
 
@@ -196,8 +196,8 @@ public class Game extends Canvas implements Runnable {
 		g.setColor(Color.white);
 		Graphics2D g2d = (Graphics2D) g; // a more complex Graphics class used to draw Objects (as in give in an Object
 											// in parameter and not dimensions or coordinates)
-		//How to make a dotted line:
-		Stroke dashed = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[] { 10 }, 0); 
+		// How to make a dotted line:
+		Stroke dashed = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[] { 10 }, 0);
 		g2d.setStroke(dashed);
 		g.drawLine(WIDTH / 2, 0, WIDTH / 2, HEIGHT);
 	}
