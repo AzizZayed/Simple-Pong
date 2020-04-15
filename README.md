@@ -14,6 +14,7 @@ There are 6 very short and intuitive classes in this game:
 * __KeyInput.java__ handles the key input in a clever way to avoid the paddles from bugging when the direction changes.
 * __MainMenu.java__ displays a main menu at the start of the game.
 
+*Controls*: 
 - Up and Down arrow keys for Red player/Right Player
 - W and S keys keys for Green player/Left Player
 
