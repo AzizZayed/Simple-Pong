@@ -16,4 +16,8 @@ There are 6 very short and intuitive classes in this game:
 
 The final product looks like this:
 
+*Controls*: 
+- Up and Down arrow keys for Red player/Right Player
+- W and S keys keys for Green player/Left Player
+
 ![](game.gif)
