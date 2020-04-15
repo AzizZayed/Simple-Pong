@@ -4,22 +4,27 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
+/**
+ * class for the paddle
+ * 
+ * @author Zayed
+ *
+ */
 public class Paddle {
 
-	private int x, y;
-	private int vel = 0;
-	private int speed = 10;
-	private int width = 22, height = 85;
-	private int score = 0;
-	private Color color;
-	private boolean left;
+	private int x, y; // positions
+	private int vel = 0; // speed and direction of paddle
+	private int speed = 10; // speed of the paddle movement
+	private int width = 22, height = 85; // dimensions
+	private int score = 0; // score for the player
+	private Color color; // color of the paddle
+	private boolean left; // true if it's the left paddle
 
 	/**
 	 * create initial properties for the paddle
 	 * 
-	 * @param color: color of the paddle
-	 * 
-	 * @param left:  boolean to know if it's the left paddle or not
+	 * @param color - color of the paddle
+	 * @param left  - boolean to know if it's the left paddle or not
 	 */
 	public Paddle(Color c, boolean left) {
 		// initial properties
@@ -45,7 +50,7 @@ public class Paddle {
 	/**
 	 * Draw paddle (a rectangle), Draw score too
 	 * 
-	 * @param g: Graphics object used to draw everything
+	 * @param g - Graphics object used to draw everything
 	 */
 	public void draw(Graphics g) {
 
@@ -74,7 +79,7 @@ public class Paddle {
 	/**
 	 * update position AND collision tests
 	 * 
-	 * @param b: the ball
+	 * @param b - the ball
 	 */
 	public void update(Ball b) {
 
@@ -100,19 +105,19 @@ public class Paddle {
 	}
 
 	/**
+	 * switches the direction
 	 * 
-	 * @param direction: -1 for up and 1 for down
+	 * @param direction - -1 for up and 1 for down
 	 */
 	public void switchDirections(int direction) {
 		vel = speed * direction;
 	}
-	
+
 	/**
 	 * stop moving the paddle
 	 */
 	public void stop() {
 		vel = 0;
 	}
-	
 
 }

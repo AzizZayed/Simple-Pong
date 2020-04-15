@@ -3,14 +3,23 @@ package com.main;
 import java.awt.Color;
 import java.awt.Graphics;
 
+/**
+ * class for the ball in the game
+ * 
+ * @author Zayed
+ *
+ */
 public class Ball {
 
 	public static final int SIZE = 16;
 
 	private int x, y; // position of top left corner of square
 	private int xVel, yVel; // either 1 or -1
-	private int speed = 5;
+	private int speed = 5; // speed of the ball
 
+	/**
+	 * constructor
+	 */
 	public Ball() {
 		reset();
 	}
@@ -42,7 +51,6 @@ public class Ball {
 	 * update position AND collision tests
 	 * 
 	 * @param lp: left paddle
-	 * 
 	 * @param rp: right paddle
 	 */
 	public void update(Paddle lp, Paddle rp) {
@@ -59,11 +67,11 @@ public class Ball {
 
 		// with walls
 
-		if (x + SIZE >= Game.WIDTH) { //right wall
+		if (x + SIZE >= Game.WIDTH) { // right wall
 			lp.addPoint();
 			reset();
 		}
-		if (x <= 0) { //left wall
+		if (x <= 0) { // left wall
 			rp.addPoint();
 			reset();
 		}

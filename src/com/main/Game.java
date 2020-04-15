@@ -9,6 +9,12 @@ import java.awt.Graphics2D;
 import java.awt.Stroke;
 import java.awt.image.BufferStrategy;
 
+/**
+ * class that manages the game, drawing and updating physics
+ * 
+ * @author Zayed
+ *
+ */
 public class Game extends Canvas implements Runnable {
 
 	private static final long serialVersionUID = 1L;
@@ -31,6 +37,9 @@ public class Game extends Canvas implements Runnable {
 
 	private MainMenu menu; // Main Menu object
 
+	/**
+	 * constructor
+	 */
 	public Game() {
 
 		canvasSetup();
@@ -76,6 +85,7 @@ public class Game extends Canvas implements Runnable {
 	@Override
 	public void run() {
 		// so you can keep your sanity, I won't explain the game loop... you're welcome
+		// I have a video on this game loop tho, check it out
 
 		this.requestFocus();
 
@@ -87,7 +97,7 @@ public class Game extends Canvas implements Runnable {
 		long timer = System.currentTimeMillis();
 		int frames = 0;
 		while (running) {
-		long now = System.nanoTime();
+			long now = System.nanoTime();
 			delta += (now - lastTime) / ns;
 			lastTime = now;
 			if (delta >= 1) {
@@ -96,8 +106,6 @@ public class Game extends Canvas implements Runnable {
 				draw();
 				frames++;
 			}
-			
-			
 
 			if (System.currentTimeMillis() - timer > 1000) {
 				timer += 1000;
@@ -187,6 +195,11 @@ public class Game extends Canvas implements Runnable {
 
 	}
 
+	/**
+	 * draw the background
+	 * 
+	 * @param g - tool to draw
+	 */
 	private void drawBackground(Graphics g) {
 		// black background
 		g.setColor(Color.black);
@@ -218,18 +231,14 @@ public class Game extends Canvas implements Runnable {
 	}
 
 	/**
-	 * returns value between min and max used to keep the value inputed between the
-	 * min and max
+	 * used to keep the value between the min and max
 	 * 
-	 * @param value: integer of the value we have
-	 * 
-	 * @param min:   minimum integer
-	 * 
-	 * @param max:   maximum integer
-	 * 
-	 * @return: integer between minimum and minimum if value is between minimum and
-	 *          max, the value is returned if value is smaller than minimum, minimum
-	 *          is returned if value is bigger than minimum, maximum is returned
+	 * @param value - integer of the value we have
+	 * @param min   - minimum integer
+	 * @param max   - maximum integer
+	 * @return: the value if value is between minimum and max, minimum is returned
+	 *          if value is smaller than minimum, maximum is returned if value is
+	 *          bigger than maximum
 	 */
 	public static int ensureRange(int value, int min, int max) {
 		return Math.min(Math.max(value, min), max);
@@ -238,9 +247,8 @@ public class Game extends Canvas implements Runnable {
 	/**
 	 * returns the sign (either 1 or -1) of the input
 	 * 
-	 * @param d: a double for the input
-	 * 
-	 * @return: 1 or -1
+	 * @param d - a double for the input
+	 * @return 1 or -1
 	 */
 	public static int sign(double d) {
 		if (d <= 0)
